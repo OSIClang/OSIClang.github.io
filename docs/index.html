@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Docs | OSIC language</title>
+<meta name="generator" content="Jekyll v3.8.4" />
+<meta property="og:title" content="Docs" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A smart c based language. Easy to learn, easy to use - how languages should be." />
+<meta property="og:description" content="A smart c based language. Easy to learn, easy to use - how languages should be." />
+<link rel="canonical" href="http://localhost:4000/docs/" />
+<meta property="og:url" content="http://localhost:4000/docs/" />
+<meta property="og:site_name" content="OSIC language" />
+<script type="application/ld+json">
+{"@type":"WebPage","headline":"Docs","url":"http://localhost:4000/docs/","description":"A smart c based language. Easy to learn, easy to use - how languages should be.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="OSIC language" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">OSIC language</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a><a class="page-link" href="/docs/">Docs</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Docs</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="part-i---basic-part">Part I - Basic Part</h2>
+
+<h3 id="chapter-1---overview">Chapter 1 - Overview</h3>
+
+<p>OSIC can run as a live interpreter.
+Just run <code class="highlighter-rouge">./osic</code> to run it.</p>
+
+<p>It can handle simple command and reduce a direct output.</p>
+
+<p>print ‘hello,world’ from OSIC shell, <code class="highlighter-rouge">print</code> can print any OSIC object.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; print('Hello ,World!');
+Hello ,World!
+&gt;&gt;&gt; 
+</code></pre></div></div>
+
+<p>You can also run OSIC as Interpreter by use a source file:</p>
+
+<p><code class="highlighter-rouge">./osic yourSourceFile.osic</code></p>
+
+<h3 id="chapter-2---variables-and-types">Chapter 2 - Variables and Types</h3>
+
+<h4 id="21-variable-declare">2.1 Variable declare.</h4>
+
+<p>OSIC is dynamic type language, declare a variable just use keyword <code class="highlighter-rouge">var</code>, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var a;
+</code></pre></div></div>
+
+<p>you can set variable’s value at declare, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var a = 100;
+</code></pre></div></div>
+
+<p>you can declare multiple variable at once, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var a, b, c;
+</code></pre></div></div>
+
+<p>multiple variable declare can’t set value.</p>
+
+<h4 id="22-value-types">2.2 Value Types</h4>
+
+<h5 id="221-integer">2.2.1 integer</h5>
+
+<p>Integer is basic type of OSIC, It’s represent any integer from very little to very big. The whole integer range limit is depends on memory, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>100;
+198098907786758567876786;
+2587658768798907095875476986789;
+</code></pre></div></div>
+
+<p>all validate integer.</p>
+
+<h5 id="222-number">2.2.2 number</h5>
+
+<p>Number is float pointer, OSIC’s implement number use double, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>11.2;
+.6;
+</code></pre></div></div>
+
+<h5 id="223-string">2.2.3 string</h5>
+
+<p>String is array of byte, define string within <code class="highlighter-rouge">'</code> or <code class="highlighter-rouge">"</code>, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'Hello, World!'
+"Hello, World!"
+</code></pre></div></div>
+
+<p>String use escape to encode special char, example</p>
+
+<ul>
+  <li><code class="highlighter-rouge">\t</code> Horizontal Tab</li>
+  <li><code class="highlighter-rouge">\n</code> Line Feed</li>
+  <li><code class="highlighter-rouge">\r</code> Carriage Return</li>
+</ul>
+
+<p>Methods of string object</p>
+
+<ul>
+  <li><code class="highlighter-rouge">upper()</code> return a copy of the string converted to uppercase. example, <code class="highlighter-rouge">'Hello,World'.upper()</code> -&gt; <code class="highlighter-rouge">'HELLO,WORLD'</code>.</li>
+  <li><code class="highlighter-rouge">lower()</code> return a copy of the string converted to uppercase. <code class="highlighter-rouge">'Hello,World'.lower()</code> -&gt; <code class="highlighter-rouge">'hello,world'</code>.</li>
+  <li><code class="highlighter-rouge">trim()</code> return a copy of the string with leading and trailing whitespace removed. example, <code class="highlighter-rouge">' Hello,World '.trim()</code> -&gt; <code class="highlighter-rouge">Hello,World</code>.</li>
+  <li><code class="highlighter-rouge">ltrim()</code> return a copy of the string with leading whitespace removed. example, <code class="highlighter-rouge">' Hello,World '.ltrim()</code> -&gt; <code class="highlighter-rouge">Hello,World </code>.</li>
+  <li><code class="highlighter-rouge">rtrim()</code> return a copy of the string with trailing whitespace removed. example, <code class="highlighter-rouge">' Hello,World '.trim()</code> -&gt; ` Hello,World`.</li>
+  <li><code class="highlighter-rouge">find(substring)</code> return lowest index of substring in string. example, <code class="highlighter-rouge">'Hello,World'.find('l')</code> -&gt; <code class="highlighter-rouge">2</code>.</li>
+  <li><code class="highlighter-rouge">rfind(substring)</code> return highest index of substring in string. example, <code class="highlighter-rouge">'Hello,World'.find('l')</code> -&gt; <code class="highlighter-rouge">9</code>.</li>
+  <li><code class="highlighter-rouge">replace(old, new)</code> return a copy of string replaced every old in string to new. example, <code class="highlighter-rouge">'Hello,World'.replace('l', '1');</code> -&gt; <code class="highlighter-rouge">'He11o,Wor1d'</code>.</li>
+  <li><code class="highlighter-rouge">split(delimiter)</code> return an array split by delimiter. example, <code class="highlighter-rouge">'Hello,World'.split(',')</code> -&gt; <code class="highlighter-rouge">['Hello', 'World']</code></li>
+  <li><code class="highlighter-rouge">join(iterable)</code> return a string which is the concatenation of the strings in the iterable, example <code class="highlighter-rouge">','.join(['Hello', 'World'])</code> -&gt; <code class="highlighter-rouge">'Hello,World'</code>.</li>
+  <li><code class="highlighter-rouge">format()</code> return a string of replace placeholder <code class="highlighter-rouge">{}</code> to arguments, example <code class="highlighter-rouge">'Hello, {}'.format('World')</code> -&gt; <code class="highlighter-rouge">'Hello, World'</code>.</li>
+  <li><code class="highlighter-rouge">startswith(prefix)</code> return true if prefix is string’s prefix, otherwise return false, example <code class="highlighter-rouge">'Hello,World'.startswith('Hello')</code> -&gt; <code class="highlighter-rouge">true</code></li>
+  <li><code class="highlighter-rouge">endswith(suffix)</code> return true if suffix is string’s suffix, otherwise return false, example <code class="highlighter-rouge">'Hello,World'.endswith('World')</code> -&gt; <code class="highlighter-rouge">true</code></li>
+</ul>
+
+<h5 id="224-true-false">2.2.4 true false</h5>
+
+<p>boolean value <code class="highlighter-rouge">true</code> <code class="highlighter-rouge">false</code>, and other type can be <code class="highlighter-rouge">false</code>,example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nil
+0
+''
+[]
+{}
+</code></pre></div></div>
+
+<h6 id="225-nil-and-sentinel">2.2.5 nil and sentinel</h6>
+
+<p><code class="highlighter-rouge">nil</code> is a value represent for nothing, It’s variable default value and function default return value.</p>
+
+<p><code class="highlighter-rouge">sentinel</code> is another value represent for nothing, but <code class="highlighter-rouge">sentinel</code> is mean’s stop or non-exist value, like stop a iterator or delete a key from dictionary.</p>
+
+<h5 id="23-assign-and-unpack">2.3 Assign and Unpack</h5>
+
+<p>Variable use <code class="highlighter-rouge">=</code> assign a value, and OSIC is a dynamic type language, you can assign any value to variable, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = 10;
+a = 'hello';
+a = 0.0;
+</code></pre></div></div>
+
+<p>OSIC also support array unpack, you can assign multiple variable at once, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a, b, c = [10, 'hello', 0.0];
+</code></pre></div></div>
+
+<p>Variable <code class="highlighter-rouge">a</code> is <code class="highlighter-rouge">10</code>, variable b is <code class="highlighter-rouge">'hello'</code> and variable <code class="highlighter-rouge">c</code> is <code class="highlighter-rouge">0.0</code>.</p>
+
+<p>If array unpack items short then variables, rest variable assign to <code class="highlighter-rouge">nil</code>, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a, b, c = [10, 'hello'];
+</code></pre></div></div>
+
+<p>Variable <code class="highlighter-rouge">a</code> is <code class="highlighter-rouge">10</code>, variable <code class="highlighter-rouge">b</code> is <code class="highlighter-rouge">'hello'</code> and variable <code class="highlighter-rouge">c</code> is <code class="highlighter-rouge">nil</code>;</p>
+
+<p>If variables short then array unpack items, rest items will discard, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a, b, c = [10, 'hello', 0.0, 'world'];
+</code></pre></div></div>
+
+<p>Variable <code class="highlighter-rouge">a</code> is <code class="highlighter-rouge">10</code>, variable <code class="highlighter-rouge">b</code> is <code class="highlighter-rouge">'hello'</code> and variable <code class="highlighter-rouge">c</code> is <code class="highlighter-rouge">0.0</code>, <code class="highlighter-rouge">'world'</code> is discard.</p>
+
+<h3 id="chapter-3---collection-types">Chapter 3 - Collection Types</h3>
+
+<h4 id="31--value-type-and-reference-type">3.1  Value type and Reference type</h4>
+
+<p>Last chapter we talk about OSIC’s basic type, like integer, number and string, those type are also <strong>value type</strong>. That mean’s those type are readonly, they shouldn’t have function update in place. And this chapter’s we talk type is <strong>reference type</strong>, those type is also a container of other values, you can add or delete item from those types.</p>
+
+<h4 id="32-array">3.2 Array</h4>
+
+<p>Array is a collection of elements, each element with a start with 0 index, represent element’s position, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = ['a', 'b', 'c', 'd'];
+</code></pre></div></div>
+
+<p>Variable <code class="highlighter-rouge">a</code> is an array with elements <code class="highlighter-rouge">'a'</code>, <code class="highlighter-rouge">'b'</code>, <code class="highlighter-rouge">'c'</code> and <code class="highlighter-rouge">'d'</code> in this specific ordered.</p>
+
+<p>Access array’s elements with index, example <code class="highlighter-rouge">a[0]</code> is ‘a’, <code class="highlighter-rouge">a[1]</code> is ‘b’. or use negative index, then index of element is array’s length + negative index, example <code class="highlighter-rouge">a[-1]</code> is ‘d’, <code class="highlighter-rouge">a[-2]</code> is ‘c’.use <code class="highlighter-rouge">a[0] = 10</code> to set an item with index.</p>
+
+<p>If an index large then or equal array’s length, array will throw an exception, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;ItemError('['a', 'b', 'c', 'd']' index out of range)&gt; 
+</code></pre></div></div>
+
+<p>Get bulk elements from array, example <code class="highlighter-rouge">a[0:2]</code> is <code class="highlighter-rouge">['a', 'b']</code>, get all elements index &gt;= 0 and index &lt; 2. Starts with 0, 0 can ignore.<code class="highlighter-rouge">a[0:2]</code> is same as <code class="highlighter-rouge">a[:2]</code>.</p>
+
+<p>Methods of array</p>
+
+<ul>
+  <li><code class="highlighter-rouge">append(obj)</code> add obj to array’s tail, example <code class="highlighter-rouge">a.append('e');</code> a become <code class="highlighter-rouge">['a', 'b', 'c', 'd', 'e']</code>.</li>
+  <li><code class="highlighter-rouge">pop()</code> return array last element and delete it from array, example <code class="highlighter-rouge">a.pop()</code>, return ‘d’ and a become <code class="highlighter-rouge">['a', 'b', 'c']</code> (a was <code class="highlighter-rouge">['a', 'b', 'c', 'd']</code>).</li>
+  <li><code class="highlighter-rouge">__length__()</code> function, get count of elements in array, example <code class="highlighter-rouge">a.__length__()</code> return <code class="highlighter-rouge">4</code> (a was <code class="highlighter-rouge">['a', 'b', 'c', 'd']</code>).</li>
+</ul>
+
+<h4 id="33-dictionary">3.3 Dictionary</h4>
+
+<p>Dictionary is a collection of elements, every element has a key, Items in dictionary is orderless, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = {'a': 1, 'b': 2', 'c': 3, 'd': 4}
+</code></pre></div></div>
+
+<p>Get elements with key, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a['a'];
+</code></pre></div></div>
+
+<p>Set elements with key, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a['a'] = 10;
+</code></pre></div></div>
+
+<p>Delete elements from key, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>delete a['a'];
+</code></pre></div></div>
+
+<p>Method of dictionary</p>
+
+<ul>
+  <li><code class="highlighter-rouge">keys()</code> return a array of all keys from dictionary, example <code class="highlighter-rouge">a.keys()</code> -&gt; <code class="highlighter-rouge">['a', 'b', 'c', 'd']</code>.</li>
+</ul>
+
+<h3 id="chapter-4---operators-and-expressions">Chapter 4 - Operators and Expressions</h3>
+
+<h4 id="41-arithmetic-operators">4.1 Arithmetic Operators</h4>
+
+<ul>
+  <li><code class="highlighter-rouge">+</code> add operator, example <code class="highlighter-rouge">5 + 2</code> result is <code class="highlighter-rouge">7</code></li>
+  <li><code class="highlighter-rouge">-</code> minus operator, example <code class="highlighter-rouge">5 - 2</code> result is <code class="highlighter-rouge">3</code></li>
+  <li><code class="highlighter-rouge">*</code> times operator, example <code class="highlighter-rouge">5 * 2</code> result is <code class="highlighter-rouge">10</code></li>
+  <li><code class="highlighter-rouge">/</code> divide operator, example <code class="highlighter-rouge">5 / 2</code> result is <code class="highlighter-rouge">2</code></li>
+  <li><code class="highlighter-rouge">%</code> mod operator, example <code class="highlighter-rouge">5 % 2</code> result is <code class="highlighter-rouge">1</code></li>
+  <li><code class="highlighter-rouge">&lt;&lt;</code> left shift operator, example <code class="highlighter-rouge">5 &lt;&lt; 2</code> result is <code class="highlighter-rouge">20</code></li>
+  <li><code class="highlighter-rouge">&gt;&gt;</code> right shift operator, example <code class="highlighter-rouge">5 &gt;&gt; 2</code> result is <code class="highlighter-rouge">1</code></li>
+  <li><code class="highlighter-rouge">~</code> binary not operator, example <code class="highlighter-rouge">~5</code> result is <code class="highlighter-rouge">-6</code></li>
+  <li><code class="highlighter-rouge">|</code> binary or operator, example <code class="highlighter-rouge">5 | 2</code> result is <code class="highlighter-rouge">7</code></li>
+  <li><code class="highlighter-rouge">&amp;</code> binary and operator, example <code class="highlighter-rouge">5 &amp; 2</code> result is <code class="highlighter-rouge">0</code></li>
+</ul>
+
+<p>If both left and and right operand is integer then result is integer. if one operand is number other is integer then result will be a number.</p>
+
+<p>Number is not support <code class="highlighter-rouge">&lt;&lt;</code>, <code class="highlighter-rouge">&gt;&gt;</code>, <code class="highlighter-rouge">~</code>, <code class="highlighter-rouge">|</code> and <code class="highlighter-rouge">&amp;</code> operator.</p>
+
+<p>String support <code class="highlighter-rouge">+</code> operator, example <code class="highlighter-rouge">'hello' + 'world'</code> result is <code class="highlighter-rouge">'helloworld'</code>.</p>
+
+<h4 id="42-relational-and-logical-operators">4.2 Relational and Logical Operators</h4>
+
+<ul>
+  <li><code class="highlighter-rouge">&lt;</code>  less then operator, example <code class="highlighter-rouge">1 &lt; 2</code> result is <code class="highlighter-rouge">true</code></li>
+  <li><code class="highlighter-rouge">&lt;=</code> less then or equal operator, example <code class="highlighter-rouge">1 &lt;= 2</code> result is <code class="highlighter-rouge">true</code>, <code class="highlighter-rouge">2 &lt;= 2</code> result is <code class="highlighter-rouge">true</code></li>
+  <li><code class="highlighter-rouge">==</code> equal operator, example <code class="highlighter-rouge">1 == 2</code> result is <code class="highlighter-rouge">false</code>, <code class="highlighter-rouge">2 == 2</code> result is <code class="highlighter-rouge">true</code></li>
+  <li><code class="highlighter-rouge">&gt;=</code> large then or equal operator, example <code class="highlighter-rouge">1 &gt;= 2</code> result is <code class="highlighter-rouge">false</code></li>
+  <li><code class="highlighter-rouge">&gt;</code> large then operator, example <code class="highlighter-rouge">1 &gt; 2</code> result is <code class="highlighter-rouge">false</code></li>
+  <li><code class="highlighter-rouge">||</code> logical or operator, example <code class="highlighter-rouge">0 || 1</code> result is <code class="highlighter-rouge">1</code></li>
+  <li><code class="highlighter-rouge">&amp;&amp;</code> logical and operator, example <code class="highlighter-rouge">1 &amp;&amp; 0</code> result is <code class="highlighter-rouge">0</code></li>
+  <li><code class="highlighter-rouge">!</code> logical not operator, example <code class="highlighter-rouge">!1</code> result is <code class="highlighter-rouge">false</code>.</li>
+</ul>
+
+<p><code class="highlighter-rouge">||</code>, <code class="highlighter-rouge">&amp;&amp;</code> and <code class="highlighter-rouge">!</code> is short-circuit evaluation, once operator has certain value, It stop evaluation rest expression, example <code class="highlighter-rouge">1 || func()</code> the func() will never execute.</p>
+
+<p>All object support <code class="highlighter-rouge">==</code>,  <code class="highlighter-rouge">||</code>, <code class="highlighter-rouge">&amp;&amp;</code> and <code class="highlighter-rouge">!</code>. only integer and number support compare operator.</p>
+
+<h4 id="43-assignment-operators-and-expressions">4.3 Assignment Operators and Expressions</h4>
+
+<ul>
+  <li><code class="highlighter-rouge">+=</code> add and assign, example <code class="highlighter-rouge">a += 1</code> result is <code class="highlighter-rouge">a = a + 1</code></li>
+  <li><code class="highlighter-rouge">-=</code> minus and assign, example <code class="highlighter-rouge">a -= 1</code> result is <code class="highlighter-rouge">a = a - 1</code></li>
+  <li><code class="highlighter-rouge">*=</code> times and assign, example <code class="highlighter-rouge">a *= 2</code> result is <code class="highlighter-rouge">a = a * 2</code></li>
+  <li><code class="highlighter-rouge">/=</code> divide and assign, example <code class="highlighter-rouge">a /= 2</code> result is <code class="highlighter-rouge">a = a / 2</code></li>
+  <li><code class="highlighter-rouge">%=</code> mod and assign, example <code class="highlighter-rouge">a %= 2</code> result is <code class="highlighter-rouge">a = a % 2</code></li>
+  <li><code class="highlighter-rouge">&lt;&lt;=</code> left shift and assign, example <code class="highlighter-rouge">a &lt;&lt;= 2</code> result is <code class="highlighter-rouge">a = a &lt;&lt; 2</code></li>
+  <li><code class="highlighter-rouge">&gt;&gt;=</code> right shift and assign, example <code class="highlighter-rouge">a &gt;&gt;= 2</code> result is <code class="highlighter-rouge">a = a &gt;&gt; 2</code></li>
+</ul>
+
+<h4 id="44-conditional-expressions">4.4 Conditional Expressions</h4>
+
+<ul>
+  <li><code class="highlighter-rouge">?:</code> conditional expression, example <code class="highlighter-rouge">a &gt; b ? a : b</code>  if <code class="highlighter-rouge">a &gt; b</code> result is <code class="highlighter-rouge">a</code>, otherwise result is <code class="highlighter-rouge">b</code></li>
+</ul>
+
+<h4 id="45-in-expressions">4.5 In Expressions</h4>
+
+<ul>
+  <li><code class="highlighter-rouge">in</code> in expression, example <code class="highlighter-rouge">1 in [1,2,3,4]</code> result is <code class="highlighter-rouge">true</code></li>
+</ul>
+
+<h3 id="chapter-5---control-flow">Chapter 5 - Control Flow</h3>
+
+<h4 id="51-if-else">5.1 if-else</h4>
+
+<p>Syntax</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (condition) {
+	block_stmt1
+} else {
+	block_stmt2
+}
+</code></pre></div></div>
+
+<p>If <code class="highlighter-rouge">condition</code> expression is <code class="highlighter-rouge">true</code>, run <code class="highlighter-rouge">block_stmt1</code>, otherwise run <code class="highlighter-rouge">block_stmt2</code>. Else part is optional, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (condition) {
+	block_stmt1
+}
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">block_stmt1</code> only run when <code class="highlighter-rouge">condition</code> expression is <code class="highlighter-rouge">true</code>.</p>
+
+<p>If-else can nested use, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (condition1) {
+	block_stmt1
+} else {
+	if (condition2)  {
+		block_stmt2
+	} else {
+		block_stmt3
+	}
+}
+</code></pre></div></div>
+
+<p>When <code class="highlighter-rouge">condition1</code> is <code class="highlighter-rouge">true</code>, run block_stmt1, block_stmt2 and block_stmt3 not run. When <code class="highlighter-rouge">condition1</code> is <code class="highlighter-rouge">false</code> and <code class="highlighter-rouge">condition2</code> is <code class="highlighter-rouge">true</code>, block_stmt2 run. When both <code class="highlighter-rouge">condition1</code> and <code class="highlighter-rouge">condition2</code> is <code class="highlighter-rouge">false</code>, <code class="highlighter-rouge">block_stmt3</code> run.</p>
+
+<h4 id="52-else-if">5.2 else-if</h4>
+
+<p>Nesting if-else-if-else have a short version, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (condition1) {
+	block_stmt1
+} else {
+	if (condition2)  {
+		block_stmt2
+	} else {
+		block_stmt3
+	}
+}
+</code></pre></div></div>
+
+<p>Short version</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (condition1) {
+	block_stmt1
+} else if (condition2)  {
+	block_stmt2
+} else {
+	block_stmt3
+}
+</code></pre></div></div>
+
+<h4 id="53-while-loop">5.3 while loop</h4>
+
+<p>Syntax</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while (condition) {
+	block_stmt1
+}
+</code></pre></div></div>
+
+<p>When <code class="highlighter-rouge">condition</code> is <code class="highlighter-rouge">true</code>, the <code class="highlighter-rouge">block_stmt1</code> run repeatly until <code class="highlighter-rouge">condition</code> become <code class="highlighter-rouge">false</code>.</p>
+
+<h4 id="54-for-loop">5.4 for loop</h4>
+
+<p>Syntax</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for (init_expr; cond_expr; step_expr) {
+	block_stmt1
+}
+</code></pre></div></div>
+
+<p>The for-loop will result follow steps,</p>
+
+<ol>
+  <li>Evalution <code class="highlighter-rouge">init_expr</code></li>
+  <li>When <code class="highlighter-rouge">cond_expr</code> is <code class="highlighter-rouge">true</code>, run block_stmt1, else exit loop.</li>
+  <li>Evalution <code class="highlighter-rouge">step_expr</code> and goto step 2.</li>
+</ol>
+
+<p>The <code class="highlighter-rouge">init_expr</code> support declare statement, and <code class="highlighter-rouge">step_expr</code> support assign statement, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for (var a = 0; a &lt; 100; a += 1) {
+	print(a);
+}
+</code></pre></div></div>
+
+<h4 id="55-for-in-loop">5.5 for-in loop</h4>
+
+<p>Syntax</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for (variable in expr) {
+	block_stmt1
+}
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">expr</code> must return an iterable object, the variable will assign iterable object’s elements from first to last, and each time run <code class="highlighter-rouge">block_stmt1</code>.</p>
+
+<p>Variable support declare, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for (var a in items) {
+	print(a);
+}
+</code></pre></div></div>
+
+<h4 id="56-break-and-continue">5.6 break and continue</h4>
+
+<p>Break statement will exit whole loop, example,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for (var i = 0; i &lt; 10; i+=1) {
+	if (i == 5) {
+		break;
+	}
+	print(i);
+}
+</code></pre></div></div>
+
+<p>The loop will exit when <code class="highlighter-rouge">i == 5</code> is <code class="highlighter-rouge">true</code>.</p>
+
+<p>Continue statement will exit current repeat,example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for (var i = 0; i &lt; 10; i+=1) {
+	if (i == 5) {
+		continue;
+	}
+	print(i);
+}
+</code></pre></div></div>
+
+<p>output</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
+2
+3
+4
+6
+7
+8
+9
+</code></pre></div></div>
+
+<p>The continue skip print when <code class="highlighter-rouge">i == 5</code> is <code class="highlighter-rouge">true</code>.</p>
+
+<h3 id="chapter-6---function">Chapter 6 - Function</h3>
+
+<h4 id="61-define-function">6.1 Define Function</h4>
+
+<p>Syntax</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def name(var a, var b = 0) {
+	block_stmt
+}
+</code></pre></div></div>
+
+<p>Name is function’s name, <code class="highlighter-rouge">block_stmt</code> is function body, <code class="highlighter-rouge">a</code> is required parameter and <code class="highlighter-rouge">b</code> is optional parameter.</p>
+
+<p>Call a function, example</p>
+
+<ul>
+  <li><code class="highlighter-rouge">name(1)</code> only pass required parameter,</li>
+  <li><code class="highlighter-rouge">name(1, 2)</code> pass two parameters,</li>
+  <li><code class="highlighter-rouge">name(a = 1, b = 2)</code> pass parameter with name.</li>
+</ul>
+
+<p>Define function with variable parameters, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def name(var a, var b, var *c) {
+}
+</code></pre></div></div>
+
+<p>Then call, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name(1,2,3,4,5,6,7,8,9);
+</code></pre></div></div>
+
+<p>In this function, parameter <code class="highlighter-rouge">a</code> is <code class="highlighter-rouge">1</code>, parameter <code class="highlighter-rouge">b</code> is <code class="highlighter-rouge">2</code>, and parameter <code class="highlighter-rouge">c</code> is <code class="highlighter-rouge">[3, 4, 5, 6, 7, 8, 9]</code>, all extra arguments will fill into <code class="highlighter-rouge">c</code> as an array.</p>
+
+<p>Define function with variable name parameters, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def name(var a, var b, var **c) {
+}
+</code></pre></div></div>
+
+<p>Then call, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name(1, 2, foo=100, bar=200);
+</code></pre></div></div>
+
+<p>In this function, parameter <code class="highlighter-rouge">a</code> is <code class="highlighter-rouge">1</code>, parameter <code class="highlighter-rouge">b</code> is <code class="highlighter-rouge">2</code>, and parameter <code class="highlighter-rouge">c</code> is <code class="highlighter-rouge">{'bar': 200, 'foo': 100}</code>, all extra arguments will fill into <code class="highlighter-rouge">c</code> as an dictionary.</p>
+
+<p>Function can have both variable parameters and variable name parameters, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def name(var a, var b, var *c, var **d) {
+}
+</code></pre></div></div>
+
+<p>Call function with variable arguments, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var a = [1,2];
+name(*a);
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">*a</code> will expand to two arguments pass to function, like follow example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name(1, 2);
+</code></pre></div></div>
+
+<p>Variable name arguments, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var a = {'a': 1, 'b': 2};
+name(**a);
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">**a</code> will expand to two name arguments pass to function, like follow example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name(a = 1, b = 2);
+</code></pre></div></div>
+
+<p>Function name is optional, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var f = def(var a) {print(a);};
+</code></pre></div></div>
+
+<p>Then you can use f call function.</p>
+
+<p>Function is expression.can be a argument, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def hello(var f) {
+	f(100);
+}
+
+hello(def(var a){print(a);});
+</code></pre></div></div>
+
+<h4 id="62-local-variable-and-variable-scope">6.2 Local Variable and Variable Scope</h4>
+
+<p>Every declared variable in function only visible in function scope, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def func() {
+	var a;
+	var b;
+	print(a, b);
+}
+</code></pre></div></div>
+
+<p>Variable <code class="highlighter-rouge">a</code> and variable <code class="highlighter-rouge">b</code> is the function local variable, they are only use in function scope (except closure).</p>
+
+<p>Function can has block scope, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def func() {
+	var a;
+	{
+		var a;
+	}
+}
+</code></pre></div></div>
+
+<p>First <code class="highlighter-rouge">a</code> and second <code class="highlighter-rouge">a</code> is different variable, in second <code class="highlighter-rouge">a</code>’s block, will unable use first variable <code class="highlighter-rouge">a</code>.</p>
+
+<h4 id="63-nested-function-and-closure">6.3 Nested Function and Closure</h4>
+
+<p>Function can defined with in a function, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def func1() {
+	def func2() {
+	}
+}
+</code></pre></div></div>
+
+<p>If return a function defined in this function, that make returned function to closure function, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def func1(var a) {
+	def func2() {
+		print(a);
+	}
+	return func2;
+}
+</code></pre></div></div>
+
+<p>When call <code class="highlighter-rouge">func1(100)</code>, return value is <code class="highlighter-rouge">func2</code> with <code class="highlighter-rouge">a = 100</code> binding, and even func1 is returned, the variable <code class="highlighter-rouge">a</code> will still exist, because the <code class="highlighter-rouge">func2</code> have reference of <code class="highlighter-rouge">a</code>, variable <code class="highlighter-rouge">a</code> will useable until <code class="highlighter-rouge">func2</code> is destroyed.</p>
+
+<p>If call <code class="highlighter-rouge">func1</code> mutliple times, the <code class="highlighter-rouge">func1</code> will return different <code class="highlighter-rouge">func2</code> with different value binding, this is closure.</p>
+
+<h3 id="chapter-7---class">Chapter 7 - Class</h3>
+
+<h4 id="71-define-class">7.1 Define Class</h4>
+
+<p>Syntax</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Greeting {
+	var welcome = 'hello';
+
+	def greeting(var name) {
+		print(self.welcome, name);
+	}
+}
+</code></pre></div></div>
+
+<p>Define class without super class, OSIC support multiple inherent, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Greeting(Hello, World) {
+}
+</code></pre></div></div>
+
+<p>Class Greeting inherent from Hello and World.</p>
+
+<p><code class="highlighter-rouge">var welcome</code> in class is class <code class="highlighter-rouge">Greeting</code> attribute, function <code class="highlighter-rouge">greeting</code> is class <code class="highlighter-rouge">Greeting</code> method. The class’s method can call from class (can’t use self) or class’s instance (can use self).</p>
+
+<p>Instance a class, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var greeting = Greeting();
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">__init__</code> function, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Greeting {
+	def __init__(var name) {
+		self.name = name;
+	}
+}
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">__init__</code> will call after the instance create, arguments is passing to from class call, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var greeting = Greeting('Zhicheng');
+</code></pre></div></div>
+
+<h4 id="72-class-attribute-and-instance-attribute">7.2 Class attribute and Instance Attribute</h4>
+
+<p>There are two different attribute the instance can have, class’s attribute and instance attribute, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Greeting {
+	var name = 'Stranger'; // class attribute
+	def greeting(var name) {
+		self.name = name; // instance attribute
+	}
+}
+</code></pre></div></div>
+
+<p>Instance’s attribute is set in self or instance variable, the class define attribute is always class’s attribute, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var greeting1 = Greeting();
+print(greeting1.name); // class's attribute
+greeting1.greeting('Zhicheng');
+print(greeting1.name); // instance attribute, set by self.name = name
+
+var greeting2 = Greeting();
+print(greeting2.name); // still class's attribute
+greeting2.name = 'Zhicheng';
+print(greeting2.name); // instance's attribute
+</code></pre></div></div>
+
+<h4 id="73-inheritance-and-super-class">7.3 Inheritance and super class</h4>
+
+<p>When class define a method have a same name with it’s super class, that’s will overwrite super class’s method, but you can use super call super class methods, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class A {
+	def hi() {
+		print("hi, I'm A");
+	}
+}
+
+class B(A) {
+	def hi() {
+		super.hi();  // call A's hi function
+		print("hi, I'm B");
+	}
+}
+</code></pre></div></div>
+
+<p>In multiple inherent class, can specific a super class function, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class A {
+	def hi() {
+		print("hi, I'm A");
+	}
+}
+
+class B {
+	def hi() {
+		print("hi, I'm B");
+	}
+}
+
+class C(A, B) {
+	def hi() {
+		super(B).hi();  // call B's hi function
+		print("Hi, I'm C");
+	}
+}
+</code></pre></div></div>
+
+<h4 id="74-self-and-super-object">7.4 self and super object</h4>
+
+<p>In method  <code class="highlighter-rouge">self</code> is reference instance of  class. super can get super class’s method, in OSIC function can dynamic assign, but the self’s binding will not change, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class A {
+	def hi() {
+		print("hi, I'm A");
+	}
+}
+class B {
+	def hi() {
+		print("hi, I'm B");
+	}
+}
+var a = A();
+var b = B();
+
+a.hi = b.hi;
+a.hi();  // call B's hi();
+</code></pre></div></div>
+
+<p>And beware of reference type in class, this may cause some confuse, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class A {
+	var names = [];
+}
+
+var a1 = A();
+a1.names.append('Foo');
+
+var a2 = A();
+a2.names.append('Bar');
+print(a1.names);
+print(a2.names);
+</code></pre></div></div>
+
+<p>Both <code class="highlighter-rouge">a1.names</code> and <code class="highlighter-rouge">a2.names</code> is <code class="highlighter-rouge">['Foo', 'Bar']</code>, because names is class A’s attribute. set instance’s attribute in <code class="highlighter-rouge">__init__</code> .</p>
+
+<h3 id="chapter-8---exceptionhandling">Chapter 8 - Exceptionhandling</h3>
+
+<h4 id="81-throw-an-exception">8.1 throw an exception</h4>
+
+<p>Syntax</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>throw expression;
+</code></pre></div></div>
+
+<p>Expression’s result need be a Exception object or instance of Exception’s subclass, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class JustException(Exception) {
+}
+</code></pre></div></div>
+
+<h4 id="82--try-catch">8.2  try-catch</h4>
+
+<p>Syntax</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>try {
+	stmts1;
+} catch (ExceptionType e) {
+	stmts2
+} catch (Exception e) {
+	stmts4;
+} finally {
+	stmts5;
+}
+</code></pre></div></div>
+
+<p>The finally <code class="highlighter-rouge">stmts5</code> always run, after <code class="highlighter-rouge">stms1</code> or any of catch catched.the catch can only catch instance of <code class="highlighter-rouge">ExceptionType</code> or instance of <code class="highlighter-rouge">ExceptionType</code> subclass, the var <code class="highlighter-rouge">e</code> is instance of <code class="highlighter-rouge">Exception</code> throwed by <code class="highlighter-rouge">stmts1</code>. <code class="highlighter-rouge">catch (Exception e)</code> can catch all exceptions, otherwise try-catch will throw upper level try-catch.</p>
+
+<h4 id="82-exception-objects">8.2 Exception objects</h4>
+
+<ul>
+  <li><code class="highlighter-rouge">TypeError</code> general type’s error.</li>
+  <li><code class="highlighter-rouge">ItemError</code> any kind of use index or name access get items</li>
+  <li><code class="highlighter-rouge">MemoryError</code> memory relative error.</li>
+  <li><code class="highlighter-rouge">RuntimeError</code> virtual machine relative error.</li>
+  <li><code class="highlighter-rouge">ArgumentError</code>  arguments of function.</li>
+  <li><code class="highlighter-rouge">AttributeError</code> get/set attribute relative error.</li>
+  <li><code class="highlighter-rouge">ArithmeticError</code> arithmetic relative error.</li>
+  <li><code class="highlighter-rouge">NotCallableError</code> called an not callable object.</li>
+  <li><code class="highlighter-rouge">NotIterableError</code> iter a not iterable object.</li>
+  <li><code class="highlighter-rouge">NotImplementedError</code> not implemented function or method.</li>
+</ul>
+
+<h3 id="chapter-9---import">Chapter 9 - Import</h3>
+
+<h4 id="91-import">9.1 import</h4>
+
+<p>Syntax</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import 'helloWorld.osic';
+import './hello_world.osic';
+import '../helloWORLD.osic';
+import '/Users/someUser/helloWorld.osic';
+</code></pre></div></div>
+
+<p>OSIC have four path resolve,</p>
+
+<ul>
+  <li>bare file, first search current working directory, if not found, search from OSIC_PATH.</li>
+  <li>current file directory, <code class="highlighter-rouge">./hello.osic</code> search <code class="highlighter-rouge">hello.osic</code> in current file directory.</li>
+  <li>current file parent directory, <code class="highlighter-rouge">../hello.osic</code> search <code class="highlighter-rouge">hello.osic</code> in current file parent directory.</li>
+  <li>absolute path, import module from absolute path.</li>
+</ul>
+
+<h4 id="92-name-resolve">9.2 Name Resolve</h4>
+
+<p><code class="highlighter-rouge">import</code> support <code class="highlighter-rouge">as</code> to rename module, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import 'hello.osic' as hello;
+</code></pre></div></div>
+
+<p>If no <code class="highlighter-rouge">as</code> in <code class="highlighter-rouge">import</code>, OSIC will auto resolve module name, module’s file name will become module name, and change every unsupport character to <code class="highlighter-rouge">_</code> to emit a legal module name, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import 'hello-world.osic';
+</code></pre></div></div>
+
+<p>Module <code class="highlighter-rouge">hello-world.osic</code> will named hello_world.</p>
+
+<h2 id="part-ii---advance-part">Part II - Advance Part</h2>
+
+<h3 id="chapter-10---accessor">Chapter 10 - Accessor</h3>
+
+<h4 id="101-setter-and-getter">10.1 setter and getter</h4>
+
+<p>Syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def foo_getter(var x) {
+	return x + 1;
+}
+
+def foo_setter(var x) {
+	return x - 1;
+}
+
+@getter(foo_getter)
+@setter(foo_setter)
+var foo = 0;
+</code></pre></div></div>
+
+<p>Anytime get variable <code class="highlighter-rouge">foo</code>’s value, will call <code class="highlighter-rouge">foo_getter</code> and pass <code class="highlighter-rouge">foo</code>’s original value to parameter <code class="highlighter-rouge">x</code>, <code class="highlighter-rouge">foo_getter</code> return a new value, that will be variable <code class="highlighter-rouge">foo</code>’s expression value.</p>
+
+<p>Anytime(except in variable declare statement) assign <code class="highlighter-rouge">foo</code>’s value, will call <code class="highlighter-rouge">foo_setter</code> and pass new value to parameter <code class="highlighter-rouge">x</code>, <code class="highlighter-rouge">foo_setter</code> return a new value, that will be <code class="highlighter-rouge">foo</code>’s final value.</p>
+
+<p>You can set multiple getter and setter, they’ll execute from bottom-up. first getter get variable’s original value, after getter will  get previous getter’s return value.</p>
+
+<p>The keyword <code class="highlighter-rouge">getter</code> is optional, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def foo_getter(var x) {
+	return x;
+}
+
+@foo_getter
+var foo;
+</code></pre></div></div>
+
+<h4 id="102-basic-usage">10.2 basic usage</h4>
+
+<p>Examples</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// have log of every time use variable
+def foo_logger(var x) {
+	// logging about x use
+	var x;
+}
+
+// make a variable readonly in getter way
+def readonly(var x) {
+	return x;
+}
+
+// make a variable readonly in setter way
+def readonly_setter(var x) {
+	throw TypeError('trying set readonly object');
+}
+</code></pre></div></div>
+
+<h4 id="103-advance-usage">10.3 advance usage</h4>
+
+<p>Example of use accessor as a type checker.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def typecheck(var type) {
+	return function(var x) {
+		if (!x.__instanceof__(type)) {
+			throw TypeError('wrong type');
+		}
+		return x;
+	};
+}
+
+@setter(typecheck(integer))
+var a = 10;
+
+a = 20; // ok
+
+a = 'hello'; // not ok
+</code></pre></div></div>
+
+<h3 id="chapter-11---iterator">Chapter 11 - Iterator</h3>
+
+<h4 id="111-iterator-object-and-iterable-object">11.1 Iterator object and iterable object</h4>
+
+<p>In <code class="highlighter-rouge">for-in</code> loop, not only collection type, any iterator object or iterable object can use as right value, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Range {
+	def __init__(var max) {
+		self.max = max;
+	}
+
+	def __iterator__() {
+		self.value = 0;
+		return self;
+	}
+
+	def __next__() {
+		if (self.value == self.max) {
+			return sentinel;
+		}
+		var value = self.value;
+		self.value += 1;
+		return value;
+	}
+}
+
+for (var a in Range(11)) {
+	print(a);
+} output
+
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+</code></pre></div></div>
+
+<p>First call <code class="highlighter-rouge">__iterator__</code> get iterable object, then call <code class="highlighter-rouge">__next__</code> and every iter, until <code class="highlighter-rouge">__next__</code> return <code class="highlighter-rouge">sentinel</code> stop iterator.</p>
+
+<p>Iterator object is used by builtin object like array and dictionary.</p>
+
+<h3 id="chapter-12---coroutine">Chapter 12 - Coroutine</h3>
+
+<h4 id="121-yield-function">12.1 yield function.</h4>
+
+<p><code class="highlighter-rouge">yield</code> function can dynamic make a function become a coroutine, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def hi() {
+	yield(1);
+	yield(2);
+}
+
+var co = hi();
+print(co.current());
+co.resume();
+print(co.current());
+</code></pre></div></div>
+
+<p>output</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1
+2
+</code></pre></div></div>
+
+<h4 id="122-resume-and-transfer">12.2 resume and transfer</h4>
+
+<p><code class="highlighter-rouge">resume</code> and <code class="highlighter-rouge">transfer</code> both can continue run coroutine, but <code class="highlighter-rouge">resume</code> will returned to caller, <code class="highlighter-rouge">transfer</code> will transfer current coroutine’s execute context to another coroutine, so <code class="highlighter-rouge">transfer</code> can only call with in coroutine, transfer example <a href="https://en.wikipedia.org/wiki/Coroutine">Coroutine - Wikipedia</a></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var q = array();
+
+var p;
+var c;
+var n = 0;
+def produce() {
+	yield(0);
+	while (true) {
+		print("produce");
+		q.append(n);
+		c.transfer();
+	}
+}
+def consume() {
+	yield(0);
+	while (true) {
+		print("consume");
+		var a = q.pop();
+		p.transfer();
+	}
+}
+p = produce();
+c = consume();
+p.resume();
+</code></pre></div></div>
+
+<h3 id="chapter-13---fileio">Chapter 13 - File/IO</h3>
+
+<h4 id="131-read-from-file">13.1 read from file</h4>
+<p><code class="highlighter-rouge">os.open</code>, <code class="highlighter-rouge">os.read</code> and <code class="highlighter-rouge">os.close</code> are part of the os package</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    import 'os';
+
+    var file = os.open("test.osic", 'r');
+    var content = os.read(file);
+
+    os.close(file);
+    print(content);
+</code></pre></div></div>
+
+<p>You have to take care, that you always have to close a file.</p>
+
+<h4 id="141-write-to-file">14.1 write to file</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    import 'os';
+
+    var content = "Hello World!";
+    var file = os.open('test.txt', 'rw');
+    os.write('hello.txt', content);
+    os.close(file);
+</code></pre></div></div>
+
+<h3 id="chapter-14---continuation">Chapter 14 - Continuation</h3>
+
+<h4 id="141-callcc-function">14.1 callcc function.</h4>
+
+<p><code class="highlighter-rouge">callcc</code> is call-with-current-continuation <a href="https://en.wikipedia.org/wiki/Call-with-current-continuation">https://en.wikipedia.org/wiki/Call-with-current-continuation</a></p>
+
+<p><code class="highlighter-rouge">callcc</code> take a function argument and call it with a continuation argument, the continuation can restart function with <code class="highlighter-rouge">callcc</code>’s position, example</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var cont; 
+
+def f() {
+	print(1);
+	callcc(function(var cc) { cont = cc; }));
+	print(2);
+}
+
+f(); // output 1 , 2
+cont(); // output 2
+</code></pre></div></div>
+
+<h4 id="142-demo">14.2 Demo</h4>
+
+<p>Demo from wikipedia. <a href="https://en.wikipedia.org/wiki/Continuation">Continuation - Wikipedia</a></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var the_continuation;
+
+def test() {
+	var i = 0;
+	callcc(function(var k){the_continuation = k;});
+	i += 1;
+	return i;
+}
+print(test());
+
+print(the_continuation());
+print(the_continuation());
+
+var another_continuation = the_continuation;
+
+print(test());
+print(the_continuation());
+print(another_continuation());
+</code></pre></div></div>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">OSIC language</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">OSIC language</li><li><a class="u-email" href="mailto:kalski.swen@gmail.com">kalski.swen@gmail.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/skalski"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">skalski</span></a></li><li><a href="https://www.twitter.com/skalski"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">skalski</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>A smart c based language. Easy to learn, easy to use - how languages should be.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
